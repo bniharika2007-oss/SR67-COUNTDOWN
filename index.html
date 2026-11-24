@@ -214,12 +214,6 @@ document.addEventListener("keydown",function(e){
   if(e.key==="Enter"&&!started)start();
   if(e.key==="c"||e.key==="C")spawn();
 });
-var demos=[[13,59,58],[14,33,58],[14,56,58],[14,59,50]],btn=$("demo");
-btn.onclick=function(){var t=demos[di],n=new Date();
-  off=new Date(n.getFullYear(),n.getMonth(),n.getDate(),t[0],t[1],t[2]).getTime()-n.getTime();
-  di=(di+1)%demos.length;setTarget();btn.textContent="Preview "+(di+1)+"/4";
-  if(!started){start();return}
-  lastMin=-1;lastHr=-1;done=false;banner.classList.remove("show");frame()};
 setInterval(frame,250);
 })();
 </script>
