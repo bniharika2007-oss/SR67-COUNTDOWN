@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Countdown to 3 PM</title>
+<title>Countdown to 3:20 PM</title>
 <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;700&display=swap" rel="stylesheet">
 <style>
 :root{--b1:#ffd1e3;--b2:#e1d4ff;--b3:#cfeaff;--b4:#d8f5df;--ink:#111;--red:#e63030;--gold:#ffd23f;--g:12vh;
@@ -103,13 +103,13 @@ body{background:linear-gradient(var(--b1) 0 25%,var(--b2) 25% 50%,var(--b3) 50% 
 <div id="tools"><button id="fs">Fullscreen</button></div>
 <div id="layout">
 <section id="center">
-<div id="title"><h1 class="out" id="h1" aria-label="Countdown"></h1><div id="ttl2" class="out">to 3:00 PM</div><button id="start">&gt; Start countdown &lt;</button><div id="hint" class="out">or press Enter</div></div>
+<div id="title"><h1 class="out" id="h1" aria-label="Countdown"></h1><div id="ttl2" class="out">to 3:20 PM</div><button id="start">&gt; Start countdown &lt;</button><div id="hint" class="out">or press Enter</div></div>
 <div id="run">
 <div id="blockwrap"><div id="block">!</div></div>
 <div id="banner" class="out">TIME’S UP!</div>
 <div id="clockwin" class="win">
-<div id="clock" role="timer" aria-label="Time left until 3 PM"><b><span>0</span></b><b><span>0</span></b><s>:</s><b><span>0</span></b><b><span>0</span></b><s>:</s><b><span>0</span></b><b><span>0</span></b></div>
-<div id="sub">until 3:00 PM</div>
+<div id="clock" role="timer" aria-label="Time left until 3:20 PM"><b><span>0</span></b><b><span>0</span></b><s>:</s><b><span>0</span></b><b><span>0</span></b><s>:</s><b><span>0</span></b><b><span>0</span></b></div>
+<div id="sub">until 3:20 PM</div>
 <div id="msg"></div>
 </div>
 </div>
@@ -189,7 +189,7 @@ function loop(){setTimeout(function(){spawn();loop()},rnd(8000,20000))}
      randomEffects();
    },rnd(6500,15500));
  }
-function setTarget(){var n=new Date(Date.now()+off),t=new Date(n.getFullYear(),n.getMonth(),n.getDate(),15,0,0);if(t<=n)t=new Date(t.getTime()+864e5);TG=t.getTime()}
+function setTarget(){var n=new Date(Date.now()+off),t=new Date(n.getFullYear(),n.getMonth(),n.getDate(),15,20,0);if(t<=n)t=new Date(t.getTime()+864e5);TG=t.getTime()}
 function frame(){
   if(!started)return;
   var left=Math.max(0,Math.ceil((TG-(Date.now()+off))/1000)),h=Math.floor(left/3600),m=Math.floor(left%3600/60),s=left%60;
@@ -203,7 +203,7 @@ function frame(){
   lastMin=m;lastHr=h;
   if(left===0&&!done){done=true;banner.classList.add("show");play(main,"shake");wave();stars(40);rain(60);setTimeout(function(){stars(30)},600)}
   if(left>0&&done){done=false;banner.classList.remove("show")}
-  msg.textContent=left===0?"Time’s up!":left>14400?"Counting down to 3:00 PM":Math.round(p*100)+"% of the way to the flag";
+  msg.textContent=left===0?"Time’s up!":left>14400?"Counting down to 3:20 PM":Math.round(p*100)+"% of the way to the flag";
 }
 function start(){
   if(started)return;started=true;setTarget();$("title").classList.add("go");
